@@ -1,0 +1,29 @@
+# this file was automaticly created by mpisubmit.bg script for edu-cmc-skpod20-327-06 #
+#@ job_type = bluegene
+#@ bg_size = 256
+#@ wall_clock_limit = 00:05:00
+#@ class = n256_m10
+#@ bg_connection = PREFER_TORUS
+#@ bg_rotate = true
+#@ output = 2mm_mpi_SMALL.$(jobid).out
+#@ error = 2mm_mpi_SMALL.$(jobid).err
+#@ notification = never
+#@ queue
+echo 2 threads
+/bgsys/drivers/ppcfloor/bin/mpirun -env CMC_SITE_SPECIFIC=n256_m10 -np 2 -mode vn -exe ./2mm_mpi_SMALL
+echo 4 threads
+/bgsys/drivers/ppcfloor/bin/mpirun -env CMC_SITE_SPECIFIC=n256_m10 -np 4 -mode vn -exe ./2mm_mpi_SMALL
+echo 8 threads
+/bgsys/drivers/ppcfloor/bin/mpirun -env CMC_SITE_SPECIFIC=n256_m10 -np 8 -mode vn -exe ./2mm_mpi_SMALL
+echo 16 threads
+/bgsys/drivers/ppcfloor/bin/mpirun -env CMC_SITE_SPECIFIC=n256_m10 -np 16 -mode vn -exe ./2mm_mpi_SMALL
+echo 32 threads
+/bgsys/drivers/ppcfloor/bin/mpirun -env CMC_SITE_SPECIFIC=n256_m10 -np 32 -mode vn -exe ./2mm_mpi_SMALL
+echo 64 threads
+/bgsys/drivers/ppcfloor/bin/mpirun -env CMC_SITE_SPECIFIC=n256_m10 -np 64 -mode vn -exe ./2mm_mpi_SMALL
+echo 128 threads
+/bgsys/drivers/ppcfloor/bin/mpirun -env CMC_SITE_SPECIFIC=n256_m10 -np 128 -mode vn -exe ./2mm_mpi_SMALL
+echo 160 threads
+/bgsys/drivers/ppcfloor/bin/mpirun -env CMC_SITE_SPECIFIC=n256_m10 -np 160 -mode vn -exe ./2mm_mpi_SMALL
+echo 256 threads
+/bgsys/drivers/ppcfloor/bin/mpirun -env CMC_SITE_SPECIFIC=n256_m10 -np 256 -mode vn -exe ./2mm_mpi_SMALL
