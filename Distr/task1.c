@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "mpi.h"
 
@@ -11,15 +12,13 @@ int main(int argc, char **argv)
     int rank, numtasks;
     // unsigned L = 8000;
     unsigned L = 80;
-    // unsigned K = 100;
-    // unsigned K = 10; 
-    // unsigned block_size = L / (2 * K); 
     int* message = malloc(L * sizeof(int));
     int paths[2][7] = {{0, 1, 2, 3, 7, 11, 15}, {0, 4, 8, 12, 13, 14, 15}};
     MPI_Status status;
     MPI_Request req1, req2;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
+    srand((unsigned) time(NULL));
     if (rank == 0) {
         printf("Created message in process %d:\n", rank);
         for (unsigned i = 0; i < L; i++) {
